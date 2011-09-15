@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dao xmlns="http://jelix.org/ns/dao/1.0">
+    <datasources>
+        <primarytable name="jediPaypal_payments" realname="jediPaypal_payments" primarykey="id_payment" />
+    </datasources>
+    <record>
+        <property name="id_payment" fieldname="id_payment" datatype="int" autoincrement="true"/>
+        <property name="currency" fieldname="currency" datatype="char" required="true"/>
+        <property name="amount" fieldname="amount" datatype="decimal" required="true"/>
+        <property name="transaction_id" fieldname="transaction_id" datatype="varchar" required="true" maxlength="20"/>
+        <property name="payer_email" fieldname="payer_email" datatype="varchar" required="true" maxlength="50"/>
+        <property name="payer_id" fieldname="payer_id" datatype="varchar" required="true" maxlength="15"/>
+        <property name="item_name" fieldname="item_name" datatype="varchar" default="" maxlength="40"/>
+        <!--<property name="" fieldname="" datatype="string/int/float/date"
+        required="yes" maxlength="" minlength="" regexp="" sequence=""
+        updatepattern="" insertpattern="" selectpattern=""/>-->
+    </record>
+    <factory>
+        <!--<method name="findByStage" type="select/selectfirst/delete/update/php">
+            <parameter name="" />
+            <values>
+                <value property="" value="" />
+            </values>
+            <conditions logic="and/or">
+                <eq property="" value="" />
+            </conditions>
+            <order>
+                <orderitem property="" way="asc/desc" />
+            </order>
+            <limit offset="" count=""/>
+            <body><![CDATA[
+            ]]></body>
+        </method>-->
+    </factory>
+</dao>
