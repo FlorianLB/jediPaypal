@@ -10,16 +10,6 @@ class defaultCtrl extends jController {
     /**
     *
     */
-    function index() {
-        $rep = $this->getResponse('html');
-
-       
-        jLog::dump($conf);
-
-
-        return $rep;
-    }
-    
 
     public function ipn(){
         $rep = $this->getResponse('text');

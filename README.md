@@ -25,6 +25,13 @@ Utilisation
 
 This module provide (for the moment) only the "backend" treatment of your paypal payment. That's why, you must create the payment form (adressed to Paypal) by your own.
 
-Once the payment have be done, jediPaypal will execute the method "processAfterPayment" of the class indicated in the config (this class must implement "jediPaypal~IJediPayment", you have an example in "jediPaypal~mypayment"). This method is called only after verfication of the payment validity, the correspondance of the paypal email account and the correspondance of the currency.
+Once the payment have be done (your app will receive an IPN form Paypal), jediPaypal will execute the method `processAfterPayment` of the class indicated in the config (this class must implement `jediPaypal~IJediPayment`, you have an example in `jediPaypal~mypayment`). This method is called only after verfication of the payment validity, the correspondance of the paypal email account and the correspondance of the currency.
 
 If the option "save_payments" is activated, the module will save in database each transaction (price, item name, transaction id, buyer email, etc).
+
+Notes
+--------------------------------------------------
+
+The page that must receive the IPN from Paypal must be `jediPaypal~default:ipn`. If you test in local or whatever, be sure that this page is accessible from Paypal.
+
+
